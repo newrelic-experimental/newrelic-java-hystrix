@@ -8,3 +8,5 @@ git {
     }
 }
 rootProject.name = 'java-instrumentation-template'
+include 'javanica'
+include 'hystrix-core'

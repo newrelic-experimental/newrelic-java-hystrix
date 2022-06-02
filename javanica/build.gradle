@@ -1,0 +1,29 @@
+
+// Build.gradle generated for instrumentation module javanica
+
+apply plugin: 'java'
+
+dependencies {
+
+   implementation 'com.netflix.hystrix:hystrix-javanica:1.4.0'
+
+   // New Relic Java Agent dependencies
+   implementation 'com.newrelic.agent.java:newrelic-agent:6.0.0'
+   implementation 'com.newrelic.agent.java:newrelic-api:6.0.0'
+   implementation fileTree(include: ['*.jar'], dir: '../libs')
+}
+
+jar {
+  manifest {
+    attributes 'Implementation-Title': 'com.newrelic.instrumentation.javanica'
+    attributes 'Implementation-Vendor': 'New Relic'
+    attributes 'Implementation-Vendor-Id': 'com.newrelic'
+    attributes 'Implementation-Version': 1.0
+  }
+}
+
+verifyInstrumentation {
+  passes 'com.netflix.hystrix:hystrix-javanica:[1.4.0,)'
+  excludeRegex '.*RC[0-9]'
+  excludeRegex '.*rc.[0-9]'
+}
