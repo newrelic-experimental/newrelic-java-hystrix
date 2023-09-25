@@ -1,12 +1,11 @@
 ## Version: [v1.0.1](https://github.com/newrelic-experimental/newrelic-java-hystrix/releases/tag/v1.0.1) | Created: 2023-09-25
-### Bug Fixes
+
 - Fixed missing libraries
 - Merge pull request #1 from newrelic-experimental/fixes
 
 
 ### Build Upgrades
-- 
-## Installation
+- Updated vendor title and added release workflow
 
 To install:
 
